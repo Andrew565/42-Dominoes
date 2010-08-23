@@ -5,7 +5,7 @@ configure do #all environments
 end #configure do
 
 configure :production, :staging do #production and staging environments
-  DataMapper.setup(:default, 'sqlite:da_db.sqlite3.db')
+  DataMapper.setup(:default, ENV['DATABASE_URL'] || 'sqlite:da_db.sqlite3.db')
   VERBOSE = false
 end #configure :production, :staging do
 
