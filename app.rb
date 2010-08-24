@@ -11,3 +11,11 @@ end
 get '/dominoes' do
 	erb :dominoes_list
 end
+
+get '/players' do
+	erb :players_list
+end
+
+get '/hands' do
+	erb :hands_list
+end

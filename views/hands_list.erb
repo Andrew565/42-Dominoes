@@ -1,0 +1,6 @@
+<% Hand.all.each do |hand| %>
+	<%= hand.id.to_s+": " %>
+	<% hand.dominos.each do |domino| %>
+		<%= domino.name %><br>
+	<% end %>
+<% end %>

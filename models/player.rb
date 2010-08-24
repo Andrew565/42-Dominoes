@@ -1,12 +1,11 @@
-class Domino
+class Player
 	include DataMapper::Resource
 	
 	property :id, Serial
-	property :sideA, Integer
-	property :sideB, Integer
 	property :name, String
 	
 	validates_uniqueness_of :name
 	
-	belongs_to :hand
+	has 1, :hand
+	has n, :dominos, :through => :hand
 end
