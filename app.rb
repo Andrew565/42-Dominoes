@@ -1,4 +1,4 @@
-%w(rubygems sinatra dm-core dm-validations dm-types dm-migrations erb pp configure models).each { |lib| require lib}
+%w(rubygems sinatra dm-core dm-validations dm-migrations erb pp configure models).each { |lib| require lib}
 
 get '/' do
   erb :index
