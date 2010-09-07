@@ -1,0 +1,8 @@
+<% Player.all.each do |player| %>
+	<%= player.name+": <br>" %>
+	<% player.dominos.each do |domino| %>
+		<%= domino.name+", " %>
+	<% end %>
+	<br><br>
+<% end %>
+	

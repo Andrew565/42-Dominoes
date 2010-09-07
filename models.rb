@@ -22,7 +22,7 @@ def initialize_dominoes
 		0.upto(6) do |intB|
 			name = (intA >= intB) ? intA.to_s+"-"+intB.to_s : intB.to_s+"-"+intA.to_s
 			domino = Domino.create(:sideA => intA, :sideB => intB, :name => name)
-			domino.hand = Hand.first(:name => "Pot")
+			domino.hand = pot.hand
 			domino.save
 		end
 	end
