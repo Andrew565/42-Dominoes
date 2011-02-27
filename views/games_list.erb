@@ -1,0 +1,10 @@
+<% Game.all.each do |game| %>
+	<h2><%= game.name %>: <i><%= game.description %></i></h2>
+	<p><b>Players:</b>
+		<ul>
+			<% game.players.each do |player| %>
+				<li><%= player.name %></li>
+			<% end %>
+		</ul>
+	</p>
+<% end %>

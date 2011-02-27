@@ -2,6 +2,8 @@
 
 require "sinatra/reloader" if development?
 
+VERBOSE = false
+
 get '/' do
   erb :index
 end
@@ -23,6 +25,10 @@ get '/hands' do
 	erb :hands_list
 end
 
+get '/games' do
+  erb :games_list
+end
+
 get '/shuffle' do
   pot = Player.first(:name => "Pot")
   
@@ -38,13 +44,13 @@ get '/shuffle' do
   	players_dominos = 0
   	7.times do |x|
   		random_domino = all_dominos.choice
-  		p "randomly selected domino is #{random_domino.name}"
+  		p "randomly selected domino is #{random_domino.name}" if VERBOSE
   		random_domino.hand = current_player.hand
   		random_domino.save
   		current_player.save
   		all_dominos.delete(random_domino)
   		players_dominos = players_dominos + 1
-  		p "#{current_player.name} has "+players_dominos.to_s+" domino(s)"
+  		p "#{current_player.name} has "+players_dominos.to_s+" domino(s)" if VERBOSE
   	end
   end
 	
